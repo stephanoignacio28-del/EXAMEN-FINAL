@@ -19,3 +19,25 @@ class tresenraya:
                     self.tablero[fila][col] = self.icono[self.turno]
                     return True
         return False
+    def verificar_ganador(self):
+        t = self.tablero
+        for i in range(3):
+            if t[i][0] == t[i][1] == t[i][2]:
+                return t[i][0]
+            if t[0][i] == t[1][i] == t[2][i]:
+                return t[0][i]
+        if t[0][0] == t[1][1] == t[2][2]:
+            return t[0][0]
+        if t[0][2] == t[1][1] == t[2][0]:
+            return t[0][2]
+        return None
+
+    def tablero_lleno(self):
+        for fila in self.tablero:
+            for casilla in fila:
+                if casilla.isdigit():
+                    return False
+        return True
+
+    def reiniciar(self):
+        self.tablero = [["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"]]
