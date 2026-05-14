@@ -41,3 +41,9 @@ class tresenraya:
 
     def reiniciar(self):
         self.tablero = [["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"]]
+
+    def cargar_historial():
+        historial = {}
+        try:
+            with open("historial.txt","r")
+            
